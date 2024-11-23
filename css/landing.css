@@ -1,0 +1,71 @@
+/* Reset some basic styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8)
+    ), 
+    url('../inc/assets/img/church.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1; /* Ensure content appears above the gradient */
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.hero-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a81ad;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background-color: #31b1f0;
+}

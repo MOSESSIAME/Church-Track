@@ -23,25 +23,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $teams = $team->getAll();
 ?>
 
-<h2 class="section-title">Manage Teams</h2>
-
-<form method="post" action="" class="team-form">
-    <div class="form-group">
-        <label for="name" class="form-label">Team Name:</label>
-        <input type="text" name="name" class="form-input" required>
+<section class="team_page">
+    <div class="team_form">
+        <h2 class="section-title">Manage Teams</h2>
+    
+        <form method="post" action="" class="team-form">
+            <div class="form-group">
+                <label for="name" class="form-label">Team Name:</label>
+                <input type="text" name="name" class="form-input" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="team_leader_id" class="form-label">Team Leader ID:</label>
+                <input type="number" name="team_leader_id" class="form-input" required>
+            </div>
+    
+            <input type="submit" value="Create Team" class="submit-btn">
+        </form>
     </div>
 
-    <div class="form-group">
-        <label for="team_leader_id" class="form-label">Team Leader ID:</label>
-        <input type="number" name="team_leader_id" class="form-input" required>
+    <div class="existing_team">
+        <h3 class="section-subtitle">Existing Teams</h3>
+        <ul class="team-list">
+            <?php foreach ($teams as $team): ?>
+                <li class="team-item"><?php echo htmlspecialchars($team['name']); ?></li>
+            <?php endforeach; ?>
+        </ul>
     </div>
+</section>
 
-    <input type="submit" value="Create Team" class="submit-btn">
-</form>
 
-<h3 class="section-subtitle">Existing Teams</h3>
-<ul class="team-list">
-    <?php foreach ($teams as $team): ?>
-        <li class="team-item"><?php echo htmlspecialchars($team['name']); ?></li>
-    <?php endforeach; ?>
-</ul>
+<?php include('inc/footer.php'); ?>

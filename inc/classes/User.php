@@ -43,6 +43,7 @@ class User {
         
         if (password_verify($password, $harsh)) {
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
             return true;
         } else {
@@ -58,14 +59,14 @@ class User {
     }
 
     // Add a new member (visitor)
-    public function addMember($name, $email, $physical_address) {
-        $stmt = $this->pdo->prepare("INSERT INTO members (name, email, address, status) VALUES (?, ?, ?, 'visitor')");
-        return $stmt->execute([$name, $email, $physical_address]);
+    public function addMember($name, $email, $phone, $physical_address) {
+        $stmt = $this->pdo->prepare("INSERT INTO members (name, email, phone, address, status) VALUES (?, ?, ?, ?, 'visitor')");
+        return $stmt->execute([$name, $email, $phone, $physical_address]);
     }
 
     // Fetch all members (visitors and confirmed)
     public function getAllMembers() {
-        $stmt = $this->pdo->query("SELECT id, name FROM members");
+        $stmt = $this->pdo->query("SELECT id, name, phone FROM members");
         return $stmt->fetchAll();
     }
 

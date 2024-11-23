@@ -17,7 +17,14 @@ if (!isLoggedIn()) {
     exit();
 }
 
-echo "<h2>Welcome to the Dashboard</h2>";
+if ($_SESSION['role'] == 'team_member') {
+    echo '<h2>Welcome to the Team Member Dashboard</h2>';
+} else if ($_SESSION['role'] == 'team_leader') {
+    echo '<h2>Welcome to the Team Leader Dashboard</h2>';
+} else {
+    echo '<h2>Welcome to the Admin Dashboard</h2>';
+}
+
 ?>
 
 <?php include('inc/footer.php'); ?>

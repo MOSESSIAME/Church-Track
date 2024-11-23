@@ -30,7 +30,7 @@ $members = $user->getAllMembers(); // Get all members
 <h2 class="section-title">Assign Team Members</h2>
 <form class="assign-team-form" method="post" action="">
     <div class="form-group">
-        <label for="team_member_id" class="form-label">Team Member ID:</label>
+        <label for="team_member_id" class="form-label">Team Member Name:</label>
         <select name="team_member_id" class="form-select">
             <?php foreach ($users as $user): ?>
                 <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['name']); ?></option>
@@ -39,7 +39,7 @@ $members = $user->getAllMembers(); // Get all members
     </div>
 
     <div class="form-group">
-        <label for="member_id" class="form-label">Visitor ID:</label>
+        <label for="member_id" class="form-label">Visitor Name:</label>
         <select name="member_id" class="form-select">
             <?php foreach ($members as $member): ?>
                 <option value="<?php echo $member['id']; ?>"><?php echo htmlspecialchars($member['name']); ?></option>
@@ -49,3 +49,4 @@ $members = $user->getAllMembers(); // Get all members
 
     <input type="submit" class="submit-btn" value="Assign">
 </form>
+<?php include('inc/footer.php'); ?>

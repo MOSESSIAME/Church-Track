@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<h2 class="section-title">Login</h2>
 <form class="login-form" method="post" action="">
+    <h2 class="section-title">Login</h2>
     <div class="form-group">
         <label for="email" class="form-label">Email:</label>
         <input type="email" class="form-input" name="email" required>
@@ -41,8 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" class="form-input" name="password" required>
     </div>
     <input type="submit" class="submit-btn" value="Login">
+    <p>Forgot password? Request reset</p>
 </form>
 
-
-
 <?php include('inc/footer.php'); ?>
+
+

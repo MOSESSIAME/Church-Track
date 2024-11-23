@@ -5,6 +5,11 @@ include('inc/classes/FollowUp.php');
 include('inc/classes/User.php');
 include('inc/navbar.php');
 
+if ($_SESSION['role'] != 'team_member') {
+    header("Location: unauthorized.php");
+    exit();
+}
+
 // Initialize classes
 $followUp = new FollowUp($pdo);
 $user = new User($pdo);
@@ -68,3 +73,4 @@ $team_members = $user->getAllTeamMembers(); // Add method to get team members if
 
     <input type="submit" value="Log Follow-Up">
 </form>
+<?php include('inc/footer.php'); ?>

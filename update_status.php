@@ -25,13 +25,20 @@ $members = $user->getAllMembers();
 <h2 class="section-title">Update Member Status</h2>
 <form class="update-status-form" method="post" action="">
     <div class="form-group">
-        <label for="member_id" class="form-label">Member Name:</label>
+        <label for="member name" class="form-label">Member Name:</label>
         <select name="member_id" class="form-select">
             <?php foreach ($members as $member): ?>
                 <option value="<?php echo $member['id']; ?>"><?php echo htmlspecialchars($member['name']); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <label for="member phone" class="form-label">Phone Number:</label>
+        <select name="member_id" class="form-select">
+            <?php foreach ($members as $member): ?>
+                <option value="<?php echo $member['id']; ?>"><?php echo htmlspecialchars($member['phone']); ?></option>
             <?php endforeach; ?>
         </select>
     </div>
 
     <input type="submit" class="submit-btn" value="Update Status">
 </form>
+<?php include('inc/footer.php'); ?>
